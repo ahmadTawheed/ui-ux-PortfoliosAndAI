@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Tawheed - Wireframes + Portfolios + AI tools</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #6a0dad;
+            --secondary-color: #9370db;
+            --light-color: #e6d7ff;
+            --dark-color: #4b0082;
+            --text-color: #333;
+            --light-text: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-color);
+            background-color: #f9f7ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 4px 12px rgba(106, 13, 173, 0.2);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--light-text) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+            background-size: 20px 20px;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(106, 13, 173, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(106, 13, 173, 0.2);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 600;
+            padding: 15px 20px;
+            border: none;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .list-group-item {
+            border: none;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(106, 13, 173, 0.1);
+        }
+        
+        .list-group-item:last-child {
+            border-bottom: none;
+        }
+        
+        .list-group-item i {
+            color: var(--primary-color);
+            margin-left: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(106, 13, 173, 0.3);
+        }
+        
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .bg-light-section {
+            background-color: #f3ebff;
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 15px rgba(106, 13, 173, 0.2);
+        }
+        
+        .quiz-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(106, 13, 173, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .quiz-options {
+            margin-bottom: 30px;
+        }
+        
+        .quiz-option {
+            background-color: #f9f7ff;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            border-color: var(--secondary-color);
+            background-color: #f3ebff;
+        }
+        
+        .quiz-option.selected {
+            border-color: var(--primary-color);
+            background-color: rgba(106, 13, 173, 0.1);
+        }
+        
+        .quiz-option.correct {
+            border-color: #28a745;
+            background-color: rgba(40, 167, 69, 0.1);
+        }
+        
+        .quiz-option.incorrect {
+            border-color: #dc3545;
+            background-color: rgba(220, 53, 69, 0.1);
+        }
+        
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .quiz-result {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(106, 13, 173, 0.05), rgba(147, 112, 219, 0.1));
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .result-score {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 50px 0 30px;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--light-color);
+            transform: translateY(-5px);
+        }
+        
+        .next-site-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            border-radius: 30px;
+            padding: 15px 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .next-site-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            color: var(--primary-color);
+        }
+        
+        .example-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(106, 13, 173, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .example-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(106, 13, 173, 0.2);
+        }
+        
+        .example-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+        
+        .example-body {
+            padding: 20px;
+        }
+        
+        .difficulty-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .difficulty-easy {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .difficulty-medium {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .difficulty-hard {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .wireframe-example {
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .wireframe-placeholder {
+            background-color: #f0f0f0;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .wireframe-header {
+            height: 40px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+        
+        .wireframe-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .wireframe-nav-item {
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            height: 15px;
+            width: 60px;
+        }
+        
+        .wireframe-content {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .wireframe-sidebar {
+            width: 30%;
+        }
+        
+        .wireframe-main {
+            width: 70%;
+        }
+        
+        .wireframe-box {
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        
+        .wireframe-button {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            height: 30px;
+            width: 100px;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-padding {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-pencil-ruler ms-2"></i> Ahmed Tawheed
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#what-is-wireframe">ما هو الـ Wireframe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#wireframe-types">أنواع الـ Wireframes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">البورتفوليو</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ai-tools">أدوات AI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#examples">أمثلة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quiz">اختبار</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content" data-aos="fade-right">
+                        <h1 class="hero-title">Wireframes + Portfolios + AI tools</h1>
+                        <p class="hero-subtitle">دليل شامل لإنشاء Wireframes فعالة وبورتفوليو احترافي باستخدام أدوات الذكاء الاصطناعي</p>
+                        <a href="#what-is-wireframe" class="btn btn-light btn-lg">
+                            ابدأ التعلم <i class="fas fa-arrow-left ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center" data-aos="fade-left">
+                        <i class="fas fa-drafting-compass" style="font-size: 15rem; opacity: 0.7;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Wireframe Section -->
+    <section id="what-is-wireframe" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">إيه هو الـ Wireframe؟</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>الـ Wireframe هو رسمة تخطيطية للموقع أو التطبيق — زي مخطط سلكي، بيورِّي مكان كل حاجة: الهيدر، القايمة، المحتوى، الأزرار، الفوتر... الهدف مش يبان جماليته أو ألوانه، لكن يبان الترتيب، الهيكل، وسلوك الصفحة.</p>
+                            <p>بالعربي البسيط: Wireframe زي العضم بتاع المشروع قبل ما تلبسه جلد — يحدد البنية بدون تفاصيل الشكل.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purpose of Wireframe Section -->
+    <section id="purpose" class="section-padding bg-light-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">هدف الـ Wireframe</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <h5 class="card-title">يوضح المحتوى والترتيب</h5>
+                            <p class="card-text">يوضح الـ محتوى وترتيب العناصر في الصفحة.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h5 class="card-title">يساعد في اتخاذ القرارات</h5>
+                            <p class="card-text">يساعد في اتخاذ قرارات مبكّرة عن الـ تجربة المستخدم (UX).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h5 class="card-title">يسهل التواصل</h5>
+                            <p class="card-text">يسهل التواصل بين المصمم، المطور، وصاحب المنتج.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h5 class="card-title">يوفر الوقت والتكلفة</h5>
+                            <p class="card-text">بيقلل وقت وتكلفة التعديلات بعدين — لأن التعديلات بسيطة على ورقة أو سكيتش بدل ما تكون في كود أو تصميم نهائي.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <h5 class="card-title">اختبار سريع</h5>
+                            <p class="card-text">اختبار سريع للأفكار (quick validation) مع العميل أو مع ناس اختبار.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-4" data-aos="fade-up">
+                <i class="fas fa-info-circle ms-2"></i>
+                <strong>نقطة مهمة:</strong> Wireframes سريعة ورخيصة — بتوفر فلوس ووقت قبل ما تدخل في تفاصيل التصميم.
+            </div>
+        </div>
+    </section>
+
+    <!-- Keep the Concept Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">خليك حافظ على الـ Concept</h2>
+            
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">قبل ما تعمل Wireframe</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    حدّد هدف الصفحة/التطبيق
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    حدد مين المستخدم (persona)
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    حدد أهم وظيفة لازم تحقّقها الصفحة
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">أثناء عمل Wireframe</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    متدخلش في التفاصيل: ركّز على الوظيفة (functionality) أكثر من الشكل
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    استخدم تسميات واضحة للعناصر بدل أيقونات نهائية
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    لو هتعمل عدة صفحات، خلي نظام شبكي consistent (grid) علشان تسهل التحويل للتصميم
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wireframe Clarifies Website Section -->
+    <section class="section-padding bg-light-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">ازاي الـ Wireframe بيبيّن ويُعرّف الموقع</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <h5 class="card-title">يبيّن الهيكل العام</h5>
+                            <p class="card-text">pages, sections, modals</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-sort-amount-up"></i>
+                            </div>
+                            <h5 class="card-title">يوضّح الاولويات</h5>
+                            <p class="card-text">إيه أهم حاجة يزورها المستخدم؟</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h5 class="card-title">يحدد الـ user flows</h5>
+                            <p class="card-text">منين يدخل المستخدم لحد ما يوصل للهدف (مثلاً: شراء —> الدفع —> تأكيد)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h5 class="card-title">يعمل mapping للمحتوى</h5>
+                            <p class="card-text">أي محتوى فين يروح، وأي عناصر قابلة للنقر فين</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fast and Cheap Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">سريع ورخيص — ليه Wireframing سريع ورخيص؟</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="fas fa-tools"></i>
+                                    <strong>أدواته ابتدائية</strong> (قلم وورقة، أو أدوات رقمية بسيطة)
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-palette"></i>
+                                    <strong>ما فيه صور عالية الدقة ولا ألوان</strong>، يبقى التعديلات بسيطة
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-comments"></i>
+                                    <strong>تقدّر تجمع آراء بسرعة</strong> وبتكلفة قليلة قبل ما تستثمر في واجهات نهائية أو development
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types of Wireframes Section -->
+    <section id="wireframe-types" class="section-padding bg-light-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">أنواع الـ Wireframes</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Paper sketches</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>ورقي/سريع — very low-fidelity. ممتاز للفكرة السريعة.</p>
+                            <div class="wireframe-example">
+                                <div class="wireframe-header"></div>
+                                <div class="wireframe-placeholder"></div>
+                                <div class="wireframe-placeholder"></div>
+                                <div class="wireframe-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Low-fidelity wireframe</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>خطوط وأشكال بسيطة (boxes, placeholders).</p>
+                            <div class="wireframe-example">
+                                <div class="wireframe-header"></div>
+                                <div class="wireframe-nav">
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                </div>
+                                <div class="wireframe-placeholder"></div>
+                                <div class="wireframe-placeholder"></div>
+                                <div class="wireframe-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Mid-fidelity wireframe</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>بيبدأ يشتغل على layout أدق، typography بسيطة، placeholder text.</p>
+                            <div class="wireframe-example">
+                                <div class="wireframe-header"></div>
+                                <div class="wireframe-nav">
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                </div>
+                                <div class="wireframe-content">
+                                    <div class="wireframe-sidebar">
+                                        <div class="wireframe-box" style="height: 60px;"></div>
+                                        <div class="wireframe-box" style="height: 60px;"></div>
+                                    </div>
+                                    <div class="wireframe-main">
+                                        <div class="wireframe-box"></div>
+                                        <div class="wireframe-box"></div>
+                                    </div>
+                                </div>
+                                <div class="wireframe-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">High-fidelity wireframe</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>شبيه بالتصميم لكن بدون ألوان نهائية؛ ممكن يحتوي على interactive annotations.</p>
+                            <div class="wireframe-example">
+                                <div class="wireframe-header"></div>
+                                <div class="wireframe-nav">
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                </div>
+                                <div class="wireframe-content">
+                                    <div class="wireframe-sidebar">
+                                        <div class="wireframe-box" style="height: 60px;"></div>
+                                        <div class="wireframe-box" style="height: 60px;"></div>
+                                        <div class="wireframe-box" style="height: 60px;"></div>
+                                    </div>
+                                    <div class="wireframe-main">
+                                        <div class="wireframe-box"></div>
+                                        <div class="wireframe-box"></div>
+                                        <div class="wireframe-box"></div>
+                                    </div>
+                                </div>
+                                <div class="wireframe-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Interactive/Clickable wireframe</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>يربط الشاشات ببعضها لاختبار الـ flow، من غير تصميم جمالي كامل.</p>
+                            <div class="wireframe-example">
+                                <div class="wireframe-header"></div>
+                                <div class="wireframe-nav">
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                </div>
+                                <div class="wireframe-content">
+                                    <div class="wireframe-main">
+                                        <div class="wireframe-box"></div>
+                                        <div class="wireframe-box"></div>
+                                    </div>
+                                </div>
+                                <div class="wireframe-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">Annotated wireframe</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>مع ملاحظات (كيف يتصرف العنصر، API calls، validation rules).</p>
+                            <div class="wireframe-example">
+                                <div class="wireframe-header"></div>
+                                <div class="wireframe-nav">
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                    <div class="wireframe-nav-item"></div>
+                                </div>
+                                <div class="wireframe-content">
+                                    <div class="wireframe-main">
+                                        <div class="wireframe-box"></div>
+                                        <div class="wireframe-box"></div>
+                                    </div>
+                                </div>
+                                <div class="wireframe-button"></div>
+                                <div class="alert alert-warning mt-2 mb-0">
+                                    <small>ملاحظة: عند الضغط يظهر نموذج تسجيل الدخول</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is Included Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">إيه اللي بيتضمنه الـ Wireframe؟</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-window-maximize"></i>
+                            </div>
+                            <h5 class="card-title">Header / Footer placeholders</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <h5 class="card-title">Navigation</h5>
+                            <p class="card-text">menus, breadcrumbs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-align-right"></i>
+                            </div>
+                            <h5 class="card-title">Content blocks</h5>
+                            <p class="card-text">titles، paragraphs، images placeholders</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-mouse-pointer"></i>
+                            </div>
+                            <h5 class="card-title">CTAs</h5>
+                            <p class="card-text">call-to-action buttons</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <h5 class="card-title">Forms fields</h5>
+                            <p class="card-text">labels، inputs، validation notes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-window-restore"></i>
+                            </div>
+                            <h5 class="card-title">Modals / Popups / Notifications</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-columns"></i>
+                            </div>
+                            <h5 class="card-title">Sidebars / Filters</h5>
+                            <p class="card-text">مثلًا في e-commerce</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <h5 class="card-title">User flow annotations</h5>
+                            <p class="card-text">what happens on click</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="900">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h5 class="card-title">Notes for devs</h5>
+                            <p class="card-text">data, endpoints, constraints</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Elements Section -->
+    <section id="portfolio" class="section-padding bg-light-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">عناصر لازم تضمنها في أي مشروع داخل الـ Portfolio</h2>
+            
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">عناصر أساسية</h4>
+                        </div>
+                        <div class="card-body">
+                            <ol>
+                                <li><strong>مشكلة المشروع وهدفه</strong> (Problem & Goal)</li>
+                                <li><strong>دورك</strong> (Your role) — إلزم توضح if solo or team</li>
+                                <li><strong>البحث</strong> — personas, user interviews, competitive analysis (ملخص)</li>
+                                <li><strong>الـ wireframes</strong> — صور للـ low/mid/high fidelity، وشرح ليه اخترت الترتيب ده</li>
+                                <li><strong>الـ user flows</strong> — simple diagrams</li>
+                                <li><strong>الـ prototype</strong> — رابط أو صور توضح التفاعل</li>
+                                <li><strong>النتائج</strong> — mock metrics أو نتائج اختبار المستخدم</li>
+                                <li><strong>دروس مستفادة</strong> — إيش تعلّمت والتغييرات اللي عملتها</li>
+                                <li><strong>المصادر/أدوات</strong> — Figma, Sketch, Miro, إلخ</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">لو ماعندكش خبرة — ازاي تعمل Portfolio؟</h4>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <strong>اصنع مشاريع وهمية</strong> (case studies مصغرة): مش مشاريع تجارية، لكن حلول لمشاكل حقيقية (مثلاً تحسين تجربة التسجيل لمطعم محلي)
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <strong>أعد تصميم واجهة موجودة</strong> (Redesign critique) — خذ موقع معروف وعمل إعادة تصميم مع شرح الأسباب
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-tasks"></i>
+                                    <strong>اشتغل على تحديات تصميم</strong> (design challenges) — اجابات واضحة ومقدمة كـ case study
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <strong>نشر عمليات العمل</strong> (process): الناس بتحب تشوف الشغل اللي وراء الكواليس — wireframes, sketches, user research
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-users"></i>
+                                    <strong>تعاون مع مطور أو صاحب فكرة</strong> وخلي دورك واضح
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-file-alt"></i>
+                                    <strong>استخدم Notion/Medium/Behance</strong> لعرض التفاصيل — وضمّن روابط تفاعلية
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Format Section -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Format مناسب لــ UI/UX portfolio</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="mb-0">ترتيب مقترح لكل case study</h4>
+                        </div>
+                        <div class="card-body">
+                            <ol>
+                                <li><strong>عنوان المشروع</strong> + صورة رئيسية جذابة</li>
+                                <li><strong>ملخّص</strong> (one-liner): المشكلة والحل</li>
+                                <li><strong>دوري وفريق العمل</strong></li>
+                                <li><strong>البحث</strong> (bullets)</li>
+                                <li><strong>الـ process:</strong> sketches → wireframes → prototype → testing</li>
+                                <li><strong>صور للـ wireframes</strong> (low → high)</li>
+                                <li><strong>تبيان النتائج</strong> أو ماذا تعلمت</li>
+                                <li><strong>رابط للمشغل التفاعلي</strong> أو ملفات Figma</li>
+                                <li><strong>نبذة عنك</strong> + تواصل</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Websites Section -->
+    <section class="section-padding bg-light-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">مواقع تنشر عليها Portfolio</h2>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fab fa-behance"></i>
+                            </div>
+                            <h5 class="card-title">Behance</h5>
+                            <p class="card-text">للعرض البصري</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fab fa-dribbble"></i>
+                            </div>
+                            <h5 class="card-title">Dribbble</h5>
+                            <p class="card-text">لو بتحب الshowcase القصير</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h5 class="card-title">Personal website</h5>
+                            <p class="card-text">Webflow / Wix / Gatsby / GitHub Pages — أفضل تحكم واحترافية</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-sticky-note"></i>
+                            </div>
+                            <h5 class="card-title">Notion</h5>
+                            <p class="card-text">جيد كبورتفوليو سريع وسهل التحديث</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <h5 class="card-title">LinkedIn + GitHub</h5>
+                            <p class="card-text">مهمين لو في مشاريع تفاعلية أو front-end</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h5 class="card-title">Cargo / Squarespace</h5>
+                            <p class="card-text">بدائل سهلة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Tools Section -->
+    <section id="ai-tools" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">أدوات AI تساعدك تـعمل Case Study</h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>أمثلة عامة على أدوات ممكن تساعد (بدون الخوض في كل اسم تجاري):</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <i class="fas fa-robot"></i>
+                                    <strong>مولدات محتوى</strong> لكتابة الملخصات والنقاط (مثلاً استخدام ChatGPT لصياغة المشكلة والحلول)
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-image"></i>
+                                    <strong>مولدات صور أو أيقونات</strong> لتسريع الـ mockups
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-plug"></i>
+                                    <strong>Plugins لـ Figma</strong> تساعد في auto-layout, content generation, wireframe templates
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-magic"></i>
+                                    <strong>أدوات تحويل النص لـ UI</strong> (text-to-UI) اللي تولّد wireframes تلقائياً
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <strong>أدوات اختبار سلوك المستخدم المدعومة بالذكاء الاصطناعي</strong> لتحليل الـ heatmaps أو الفيديوهات
+                                </li>
+                            </ul>
+                            <div class="alert alert-warning mt-3">
+                                <i class="fas fa-exclamation-triangle ms-2"></i>
+                                <strong>ملاحظة:</strong> استخدم الـ AI كـ مساعد — لكن لازم توضح أنت اللي فكرت في الحل والتحليل (important for portfolio credibility)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="section-padding bg-light-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">خمس أمثلة توضيحية</h2>
+            <p class="text-center mb-5" data-aos="fade-up">متدرجة من السهل للصعب</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="example-card">
+                        <div class="example-header">
+                            <h5 class="mb-0">مثال 1 — سهل</h5>
+                        </div>
+                        <div class="example-body">
+                            <span class="difficulty-badge difficulty-easy">سهل</span>
+                            <p><strong>Sketch:</strong> صفحة Landing لمخبز محلي</p>
+                            <p><strong>عناصر:</strong> شعار، عنوان، حزمة منتجات، CTA "اطلب الآن"</p>
+                            <p><strong>هدف Wireframe:</strong> ترتيب البصر (visual hierarchy) لزيادة النقر على CTA</p>
+                            <p><strong>مخرجات:</strong> ورقة/low-fi wireframe + ملاحظات لأماكن الصور</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="example-card">
+                        <div class="example-header">
+                            <h5 class="mb-0">مثال 2 — أسهل متوسط</h5>
+                        </div>
+                        <div class="example-body">
+                            <span class="difficulty-badge difficulty-medium">أسهل متوسط</span>
+                            <p><strong>Sketch:</strong> صفحة تسجيل مستخدم (Sign up / Login) مع social login</p>
+                            <p><strong>هدف:</strong> تقليل friction ووضوح الحقول</p>
+                            <p><strong>مخرجات:</strong> mid-fi wireframe + حالات الخطأ (validation notes)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="example-card">
+                        <div class="example-header">
+                            <h5 class="mb-0">مثال 3 — متوسط</h5>
+                        </div>
+                        <div class="example-body">
+                            <span class="difficulty-badge difficulty-medium">متوسط</span>
+                            <p><strong>Sketch:</strong> صفحة منتج في e-commerce مع filters وadd-to-cart</p>
+                            <p><strong>هدف:</strong> اختبار placement للفلاتر وتأثيره على البحث</p>
+                            <p><strong>مخرجات:</strong> wireframe + interactive prototype بسيط للاختبار</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="example-card">
+                        <div class="example-header">
+                            <h5 class="mb-0">مثال 4 — صعب</h5>
+                        </div>
+                        <div class="example-body">
+                            <span class="difficulty-badge difficulty-hard">صعب</span>
+                            <p><strong>Sketch:</strong> لوحة تحكم (Dashboard) لمستخدمي أعمال — widgets, filters, reports</p>
+                            <p><strong>هدف:</strong> ترتيب المعلومات الأكثر أهمية للمستخدم</p>
+                            <p><strong>مخرجات:</strong> high-fi wireframe + annotated interactions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="example-card">
+                        <div class="example-header">
+                            <h5 class="mb-0">مثال 5 — أصعب</h5>
+                        </div>
+                        <div class="example-body">
+                            <span class="difficulty-badge difficulty-hard">أصعب</span>
+                            <p><strong>Sketch:</strong> multi-step booking flow (حجز تذاكر مع seat selection, payment, confirmation)</p>
+                            <p><strong>هدف:</strong> تقليل أخطاء المستخدم وإظهار تقدم الخطوات بوضوح</p>
+                            <p><strong>مخرجات:</strong> flow diagram + clickable wireframes لكل خطوة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-4" data-aos="fade-up">
+                <i class="fas fa-info-circle ms-2"></i>
+                <strong>لكل مثال:</strong> وضّح الهدف، الجمهور، عناصر الواجهة، fidelity المطلوب، وكيف هتختبر (usability test script موجز)
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="section-padding">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">10 اختبارات - أسئلة اختيار من متعدد</h2>
+            <p class="text-center mb-5" data-aos="fade-up">اِمتحن نفسك</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="quiz-container" data-aos="fade-up">
+                        <div id="quiz-content">
+                            <!-- Quiz content will be dynamically generated -->
+                        </div>
+                        
+                        <div class="quiz-navigation">
+                            <button id="prev-btn" class="btn btn-outline-primary" disabled>
+                                <i class="fas fa-arrow-right me-2"></i> السابق
+                            </button>
+                            <span id="question-counter">1 / 10</span>
+                            <button id="next-btn" class="btn btn-primary">
+                                التالي <i class="fas fa-arrow-left ms-2"></i>
+                            </button>
+                        </div>
+                        
+                        <div id="quiz-result" class="quiz-result">
+                            <div class="result-score" id="score-display">0/10</div>
+                            <h3>نتيجة الاختبار</h3>
+                            <p id="result-message"></p>
+                            <button id="restart-quiz" class="btn btn-primary mt-3">
+                                إعادة الاختبار <i class="fas fa-redo ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Topics Section -->
+    <section class="section-padding bg-light-section">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">العناوين الرئيسية للبحث أكثر</h2>
+            <p class="text-center mb-5" data-aos="fade-up">للحصول على معلومات أكثر</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <h5 class="card-title">Design systems & wireframing patterns</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <h5 class="card-title">Usability testing for wireframes</h5>
+                            <p class="card-text">moderated vs unmoderated</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h5 class="card-title">Low-fi vs High-fi</h5>
+                            <p class="card-text">when to use which</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-sticky-note"></i>
+                            </div>
+                            <h5 class="card-title">Annotated wireframes</h5>
+                            <p class="card-text">best practices</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-plug"></i>
+                            </div>
+                            <h5 class="card-title">Tools</h5>
+                            <p class="card-text">Figma plugins for wireframes & prototyping</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h5 class="card-title">Writing compelling case studies</h5>
+                            <p class="card-text">for UI/UX</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h5 class="card-title">Converting wireframes to responsive layouts</h5>
+                            <p class="card-text">grid systems</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-universal-access"></i>
+                            </div>
+                            <h5 class="card-title">Accessibility considerations</h5>
+                            <p class="card-text">at wireframe stage</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="900">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h5 class="card-title">AI-assisted prototyping</h5>
+                            <p class="card-text">pros & cons</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h5 class="card-title">How to present process</h5>
+                            <p class="card-text">to employers/interviewers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h3 class="footer-title">Ahmed Tawheed</h3>
+                    <p>موقع تفاعلي متخصص في تصميم واجهات المستخدم وتجربة المستخدم (UI/UX) لتقديم محتوى تعليمي احترافي.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-title">روابط سريعة</h5>
+                    <a href="#what-is-wireframe" class="footer-link">ما هو الـ Wireframe</a>
+                    <a href="#wireframe-types" class="footer-link">أنواع الـ Wireframes</a>
+                    <a href="#portfolio" class="footer-link">البورتفوليو</a>
+                    <a href="#ai-tools" class="footer-link">أدوات AI</a>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-title">أقسام الموقع</h5>
+                    <a href="#examples" class="footer-link">أمثلة</a>
+                    <a href="#quiz" class="footer-link">الاختبار</a>
+                    <a href="#" class="footer-link">المدونة</a>
+                    <a href="#" class="footer-link">اتصل بنا</a>
+                </div>
+                
+                <!-- <div class="col-lg-4 mb-4">
+                    <h5 class="footer-title">تابعنا</h5>
+                    <p>اشترك في نشرتنا البريدية للحصول على أحدث المقالات والمصادر في مجال تصميم UI/UX.</p>
+                    <div class="input-group mt-3">
+                        <input type="email" class="form-control" placeholder="بريدك الإلكتروني">
+                        <button class="btn btn-light" type="button">اشترك</button>
+                    </div>
+                </div>
+            </div> -->
+            
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Ahmed Tawheed. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="../lec_5/w1.html" class="next-site-btn">
+                        الانتقال للموقع التالي <i class="fas fa-arrow-left ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Quiz data
+        const quizData = [
+            {
+                question: "الـ Wireframe بيُستخدم أساسًا لـ:",
+                options: [
+                    "اختيار الألوان",
+                    "تعريف هيكل الصفحة ووظيفتها",
+                    "كتابة المحتوى النهائي",
+                    "تحديد خط الطباعة الوحيد"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "أي نوع من الـ Wireframes هو الأقل تفصيلاً؟",
+                options: [
+                    "High-fidelity",
+                    "Mid-fidelity",
+                    "Low-fidelity",
+                    "Interactive"
+                ],
+                correctAnswer: 2
+            },
+            {
+                question: "إيه اللي لازم يتضمنه كل case study في البورتفوليو؟",
+                options: [
+                    "فقط الصورة النهائية",
+                    "وصف للمشكلة، عملية التصميم، نتائج",
+                    "لستة بالأدوات اللي استخدمتها فقط",
+                    "رابط لموقعك الشخصي فقط"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Annotation في الـ wireframe بتستخدم لـ:",
+                options: [
+                    "إضافة ألوان للصفحة",
+                    "شرح سلوك العناصر للمطور أو الفريق",
+                    "تقليل حجم الصور",
+                    "تحميل الخطوط"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "أفضل أداة لنشر Portfolio مع تحكم كامل للمظهر هي:",
+                options: [
+                    "Behance",
+                    "Webflow / personal website",
+                    "Dribbble",
+                    "LinkedIn"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "إذا عايز تختبر flow بسرعة، أفضل حاجة تعملها:",
+                options: [
+                    "تعمل تصميم نهائي بالألوان أولًا",
+                    "تعمل clickable wireframe أو prototype",
+                    "تكتب كود React فورًا",
+                    "ترسل صور للمستخدمين بدون شرح"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "عند تصميم صفحة تسجيل، أهم حاجة هي:",
+                options: [
+                    "شكل الحقل فقط",
+                    "تقليل عدد الحقول وزيادة الوضوح",
+                    "استخدام صور متنقلة في الخلفية",
+                    "جعل الصفحة صفحة واحدة فقط"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "أداة AI ممكن تساعد في:",
+                options: [
+                    "استبدال تفكير المصمم بالكامل",
+                    "توليد محتوى أولي، أفكار wireframe، وتسهيل المكونات المتكررة",
+                    "عمل كل development بدلاً منك",
+                    "كلها غلط"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "Low-fidelity wireframe مناسب لـ:",
+                options: [
+                    "اختبار color palette",
+                    "مناقشة الهيكل والوظائف الأولية",
+                    "تسليم التصميم للعميل النهائي",
+                    "كتابة CSS"
+                ],
+                correctAnswer: 1
+            },
+            {
+                question: "أفضل طريقة لعرض عملية التصميم في البورتفوليو هي:",
+                options: [
+                    "نشر صور فقط بدون شرح",
+                    "سرد قصة (problem → research → wireframes → prototype → testing → results)",
+                    "وضع رابط للفيديو فقط",
+                    "تحميل ملف PSD بدون وصف"
+                ],
+                correctAnswer: 1
+            }
+        ];
+        
+        // Quiz variables
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = [];
+        
+        // DOM elements
+        const quizContent = document.getElementById('quiz-content');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const questionCounter = document.getElementById('question-counter');
+        const quizResult = document.getElementById('quiz-result');
+        const scoreDisplay = document.getElementById('score-display');
+        const resultMessage = document.getElementById('result-message');
+        const restartQuizBtn = document.getElementById('restart-quiz');
+        
+        // Initialize quiz
+        function initQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            userAnswers = [];
+            quizResult.style.display = 'none';
+            quizContent.style.display = 'block';
+            showQuestion();
+            updateButtons();
+        }
+        
+        // Show current question
+        function showQuestion() {
+            const question = quizData[currentQuestion];
+            let optionsHTML = '';
+            
+            question.options.forEach((option, index) => {
+                optionsHTML += `
+                    <div class="quiz-option" data-index="${index}">
+                        ${String.fromCharCode(65 + index)}) ${option}
+                    </div>
+                `;
+            });
+            
+            quizContent.innerHTML = `
+                <div class="quiz-question">${currentQuestion + 1}. ${question.question}</div>
+                <div class="quiz-options">
+                    ${optionsHTML}
+                </div>
+            `;
+            
+            // Add click event to options
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    document.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Store user answer
+                    userAnswers[currentQuestion] = parseInt(this.dataset.index);
+                });
+            });
+            
+            // Restore previous answer if exists
+            if (userAnswers[currentQuestion] !== undefined) {
+                document.querySelectorAll('.quiz-option')[userAnswers[currentQuestion]].classList.add('selected');
+            }
+            
+            // Update question counter
+            questionCounter.textContent = `${currentQuestion + 1} / ${quizData.length}`;
+        }
+        
+        // Update navigation buttons
+        function updateButtons() {
+            prevBtn.disabled = currentQuestion === 0;
+            
+            if (currentQuestion === quizData.length - 1) {
+                nextBtn.innerHTML = 'إنهاء الاختبار <i class="fas fa-check ms-2"></i>';
+            } else {
+                nextBtn.innerHTML = 'التالي <i class="fas fa-arrow-left ms-2"></i>';
+            }
+        }
+        
+        // Show quiz results
+        function showResults() {
+            quizContent.style.display = 'none';
+            quizResult.style.display = 'block';
+            
+            // Calculate score
+            score = 0;
+            userAnswers.forEach((answer, index) => {
+                if (answer === quizData[index].correctAnswer) {
+                    score++;
+                }
+            });
+            
+            // Display score
+            scoreDisplay.textContent = `${score} / ${quizData.length}`;
+            
+            // Display message based on score
+            let message = '';
+            if (score >= 8) {
+                message = 'ممتاز! لديك معرفة ممتازة بـ Wireframes و Portfolios.';
+            } else if (score >= 6) {
+                message = 'جيد جداً! لديك معرفة جيدة ولكن يمكنك تحسينها في بعض المجالات.';
+            } else if (score >= 4) {
+                message = 'متوسط. تحتاج إلى المزيد من التعلم وال practice في مجال Wireframes و Portfolios.';
+            } else {
+                message = 'مبتدئ. نوصي بدراسة المواد المقدمة في الموقع بشكل أعمق.';
+            }
+            
+            resultMessage.textContent = message;
+        }
+        
+        // Event listeners
+        prevBtn.addEventListener('click', function() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+                updateButtons();
+            }
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            if (currentQuestion < quizData.length - 1) {
+                currentQuestion++;
+                showQuestion();
+                updateButtons();
+            } else {
+                showResults();
+            }
+        });
+        
+        restartQuizBtn.addEventListener('click', initQuiz);
+        
+        // Initialize quiz on page load
+        initQuiz();
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
